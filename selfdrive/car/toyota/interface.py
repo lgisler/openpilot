@@ -227,6 +227,15 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 4305. * CV.LB_TO_KG + STD_CARGO_KG
       set_lat_tune(ret.lateralTuning, LatTunes.PID_J)
 
+    elif candidate == CAR.YARIS:
+      # TODO get actual values
+      stop_and_go = False
+      ret.safetyConfigs[0].safetyParam = 73
+      ret.wheelbase = 2.56
+      ret.steerRatio = 16.88
+      tire_stiffness_factor = 0.5533
+      ret.mass = 2855. * CV.LB_TO_KG + STD_CARGO_KG
+
     ret.steerRateCost = 1.
     ret.centerToFront = ret.wheelbase * 0.44
 
